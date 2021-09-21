@@ -17,6 +17,7 @@
 						<Button id="cancelButton" text="Cancel" type="Transparent" press="onCancel" visible="false"/>
 					</OverflowToolbar>
 				</headerToolbar>
+				a;lsdfj
 				<columns>
 					<Column width="12em">
 						<Text text="Activity"/>
