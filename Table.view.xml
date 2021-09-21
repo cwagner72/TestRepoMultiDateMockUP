@@ -1,0 +1,90 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified" height="100%" controllerName="sap.m.sample.TableEditable.Table">
+	<Page showHeader="false" enableScrolling="true" class="sapUiContentPadding" showNavButton="false">
+		<content>
+			<Toolbar width="100%" id="toolbar2">
+				<content>
+					<u:Calendar id="calendar" select="handleCalendarSelect" intervalSelection="true" weekNumberSelect="handleWeekNumberSelect"/>
+				</content>
+			</Toolbar>
+			<Table id="idProductsTable" growing="true" growingThreshold="10" paste="onPaste">
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<Title text="Week 24" level="H2"/>
+						<ToolbarSpacer/>
+						<Button id="editButton" text="Edit" type="Transparent" press="onEdit"/>
+						<Button id="addButton" text="Add Op" type="Transparent" icon="sap-icon://add" press="onCancel" visible="false"/>
+						<Button id="saveButton" text="Save" type="Transparent" press="onSave" visible="false"/>
+						<Button id="cancelButton" text="Cancel" type="Transparent" press="onCancel" visible="false"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="Activity"/>
+						<footer>
+							<Text text="Total (hrs)"/>
+						</footer>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Mon"/>
+						<footer>
+							<Text text="{ path: '/MonTot', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }"/>
+						</footer>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Tue"/>
+						<footer>
+							<Text text="{ path: '/TueTot', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }"/>
+						</footer>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Wed"/>
+						<footer>
+							<Text text="{ path: '/WedTot', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }"/>
+						</footer>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Thu"/>
+						<footer>
+							<Text text="{ path: '/ThuTot', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }"/>
+						</footer>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="Fri"/>
+						<footer>
+							<Text text="{ path: '/FriTot', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }"/>
+						</footer>
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Total (hrs)"/>
+						<footer>
+							<Text text="{ path: '/TotAll', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }"/>
+						</footer>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier title="{Ltxa1}" text="{Maktx}"/>
+							<ObjectNumber number="{ path: 'MonTim', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }" unit="hrs"/>
+							<ObjectNumber number="{ path: 'TueTim', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }" unit="hrs"/>
+							<ObjectNumber number="{ path: 'WedTim', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }" unit="hrs"/>
+							<ObjectNumber number="{ path: 'ThuTim', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }" unit="hrs"/>
+							<ObjectNumber number="{ path: 'FriTim', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }" unit="hrs"/>
+							<ObjectNumber number="{ path: 'Total', formatter: 'sap.m.sample.TableEditable.Formatter.numberUnit' }" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+				<Button text="Submit" press="onOrder">
+					<layoutData>
+						<OverflowToolbarLayoutData moveToOverflow="false"/>
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
